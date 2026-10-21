@@ -1,0 +1,232 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+            radial-gradient(circle at 10% 15%,
+            rgba(234, 67, 53, 0.5), transparent 32%),
+            radial-gradient(circle at 90% 15%,
+            rgba(66, 133, 244, 0.5), transparent 32%),
+            radial-gradient(circle at 10% 90%,
+            rgba(52, 168, 83, 0.5), transparent 32%),
+            radial-gradient(circle at 90% 90%,
+            rgba(251, 188, 4, 0.5), transparent 32%),
+            #f5f6fa;
+    font-family: Arial, sans-serif;
+}
+
+/* Main calculator */
+.calculator {
+    width: fit-content;
+    padding: 20px;
+    background-color: #292929;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Calculator display */
+.display {
+    width: 340px;
+    height: 75px;
+    margin-bottom: 15px;
+    background-color: #c8c8c8;
+    border: 2px solid #999999;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 28px;
+    font-weight: bold;
+    color: #222;
+}
+
+/* Buttons layout */
+.buttons p {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+/* All buttons have the same dimensions */
+button {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #dddddd;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Night mode */
+body.dark-mode {
+    background:
+            radial-gradient(circle at 10% 15%,
+            rgba(234, 67, 53, 0.45), transparent 35%),
+            radial-gradient(circle at 90% 15%,
+            rgba(66, 133, 244, 0.45), transparent 35%),
+            radial-gradient(circle at 10% 90%,
+            rgba(52, 168, 83, 0.45), transparent 35%),
+            radial-gradient(circle at 90% 90%,
+            rgba(251, 188, 4, 0.45), transparent 35%),
+            #08090d;
+    transition: background 0.4s ease;
+}
+
+/* Calculator in night mode */
+body.dark-mode .calculator {
+    background-color: #17191f;
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Night mode toggle */
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: auto;
+    height: auto;
+    padding: 10px 16px;
+    border-radius: 25px;
+    border: 1px solid #cccccc;
+    background-color: white;
+    color: #222222;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode #theme-toggle {
+    background-color: #22252d;
+    color: white;
+    border-color: #444955;
+}
+
+/* Creator credit */
+.calculator-credit {
+    margin: 0 0 18px;
+    text-align: center;
+    color: #d1d5db;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+.calculator-credit span {
+    color: white;
+    font-weight: bold;
+}
+
+/* GDG footer */
+.calculator-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 18px;
+    padding-top: 12px;
+    border-top: 1px solid #444444;
+    color: #d1d5db;
+    font-size: 14px;
+}
+
+.calculator-footer svg {
+    width: 163px;
+    height: 22px;
+    flex-shrink: 0;
+}
+
+/* Dark mode */
+body.dark-mode .calculator-credit {
+    color: #b9bdc7;
+}
+
+body.dark-mode .calculator-credit span {
+    color: white;
+}
+
+body.dark-mode .calculator-footer {
+    color: #e5e7eb;
+    border-top-color: #353945;
+}
+
+body.dark-mode .calculator-footer svg {
+    filter: brightness(1.35);
+}
+
+/* Base buttons */
+.buttons button {
+    background-color: #343740;
+    color: #f5f5f5;
+    border: 1px solid #454852;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+/* Hover */
+.buttons button:hover {
+    background-color: #484c57;
+}
+
+/* Operators */
+.buttons button.operator {
+    background-color: #2856a5;
+    border-color: #4285f4;
+}
+
+.buttons button.operator:hover {
+    background-color: #3975ce;
+}
+
+/* Delete */
+.buttons button.delete {
+    background-color: #b8322a;
+    border-color: #ea4334;
+}
+
+.buttons button.delete:hover {
+    background-color: #ea4334;
+}
+
+/* All Clear */
+.buttons button.clear {
+    background-color: #fbbc05;
+    border-color: #fbbc05;
+    color: #252525;
+}
+
+.buttons button.clear:hover {
+    background-color: #ffd04a;
+}
+
+/* Equals */
+.buttons button.equals {
+    background-color: #0d9d58;
+    border-color: #0d9d58;
+}
+
+.buttons button.equals:hover {
+    background-color: #12b76a;
+}
+
+/* Click effect */
+.buttons button:active {
+    transform: scale(0.94);
+}
